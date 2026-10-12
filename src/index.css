@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+/* ─── Leaflet Map Fixes ──────────────────────────────────────────────────── */
+.leaflet-container {
+  background: #1f2937;
+  font-family: inherit;
+}
+
+/* Ensure Leaflet z-index doesn't conflict with our UI */
+.leaflet-pane {
+  z-index: 10;
+}
+.leaflet-control-container {
+  z-index: 100;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* Leaflet popup dark theme */
+.leaflet-popup-content-wrapper {
+  background: #1f2937;
+  color: #f3f4f6;
+  border: 1px solid #374151;
+  border-radius: 8px;
+}
+.leaflet-popup-tip {
+  background: #1f2937;
+}
+.leaflet-popup-content b {
+  color: #60a5fa;
+}
+
+/* Tooltip dark theme */
+.leaflet-tooltip {
+  background: #111827;
+  color: #d1d5db;
+  border: 1px solid #374151;
+  border-radius: 4px;
+  font-size: 11px;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+.leaflet-tooltip-top:before {
+  border-top-color: #374151;
+}
+
+/* Smooth map transitions */
+.leaflet-fade-anim .leaflet-tile,
+.leaflet-zoom-anim .leaflet-zoom-animated {
+  will-change: opacity, transform;
+}
+
+/* Ensure html/body/root take full height */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background: #030712;
+}
+
+/* Route path animation */
+@keyframes dash {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+/* Animated route line */
+.leaflet-overlay-pane svg path[stroke-dasharray] {
+  animation: dash 1s linear infinite;
+}
