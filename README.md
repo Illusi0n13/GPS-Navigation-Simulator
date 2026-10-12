@@ -4,6 +4,8 @@ An interactive GPS-style route finder that runs **our own implementation of Dijk
 
 Built with React 19, TypeScript, Vite, Tailwind CSS 4 and Leaflet.
 
+![GPS Navigation Simulator showing a shortest route on the map](route%20image.png)
+
 ---
 
 ## Features
